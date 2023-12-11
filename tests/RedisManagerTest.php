@@ -23,7 +23,7 @@ class RedisManagerTest extends TestCase
          * @param array $context since PhpRedis >= 5.3.0 can specify authentication and stream information on connect
          */
 
-        $inputConfig = [
+        $configs = [
             "default" => [
                 'driver'         => RedisConnector::class,
                 'host'           => 'redis.kitgor.com',
@@ -53,7 +53,7 @@ class RedisManagerTest extends TestCase
                 'wait_timeout'   => 5, // 连接失败时，等待多久时间重新连接
             ],
         ];
-        return $inputConfig;
+        return $configs;
     }
 
     protected function getDefaultRedisManager(string $name): Connection

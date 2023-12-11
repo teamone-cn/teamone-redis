@@ -73,7 +73,7 @@ class RedisManager implements Factory
      */
     protected function connector(string $driver): Connector
     {
-        //
+        // 初始化配置给定的连接器
         if (class_exists($driver)) {
             $reflection = new ReflectionClass($driver);
             $instance   = $reflection->newInstance();
