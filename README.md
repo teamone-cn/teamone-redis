@@ -2,7 +2,9 @@
 
 ## 简介
 
-一个 PHP Redis 客户端连接组件，此组件支付超时重连。
+![TeamOne](https://font.thwpmanage.com/img/teamone.jpg) 
+
+Teamone Redis Client 是【霆万平头哥】开发的一个 PHP Redis 客户端连接组件，此组件支付超时重连。
 
 ## 安装
 
