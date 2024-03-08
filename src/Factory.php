@@ -5,7 +5,7 @@ namespace Teamone\Redis;
 interface Factory
 {
     /**
-     * Get a Redis connection by name.
+     * 获取 Redis 连接
      *
      * @param  string|null  $name
      * @return Connection

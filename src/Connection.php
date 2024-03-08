@@ -3,6 +3,7 @@
 namespace Teamone\Redis;
 
 use Redis;
+use RedisException;
 
 abstract class Connection
 {
@@ -31,17 +32,16 @@ abstract class Connection
         return $this->name;
     }
 
+    /**
+     * @desc
+     * @param string $method
+     * @param array $parameters
+     * @return mixed
+     * @throws RedisException
+     */
     public function command(string $method, array $parameters = [])
     {
-        $start = microtime(true);
-
-        $result = $this->client()->{$method}(...$parameters);
-
-        $end = microtime(true);
-
-        $time = round(($end - $start) * 1000, 2);
-
-        return $result;
+        return $this->client()->{$method}(...$parameters);
     }
 
     public function __call(string $method, array $parameters)

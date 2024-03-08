@@ -42,7 +42,6 @@ class RedisConnector implements Connector
      */
     public function connect(array $config): Connection
     {
-
         $connector = function (array $config): Redis {
             return $this->createClient($config);
         };
@@ -64,8 +63,6 @@ class RedisConnector implements Connector
      */
     protected function createClient(array $config): Redis
     {
-
-
         // 创建连接
         $client = $this->createConnect($config);
 
@@ -122,7 +119,6 @@ class RedisConnector implements Connector
             return $client;
 
         } catch (RedisException $e) {
-            // 重连次数
             if ($reconnect > 0) {
                 $waitTimeout = $config['wait_timeout'] ?? 3;
                 sleep($waitTimeout);
@@ -131,6 +127,5 @@ class RedisConnector implements Connector
 
             throw $e;
         }
-
     }
 }

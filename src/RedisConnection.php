@@ -49,7 +49,6 @@ class RedisConnection extends Connection
         try {
             return parent::command($method, $parameters);
         } catch (RedisException $e) {
-
             // 关闭连接
             $this->disconnect();
 
@@ -74,7 +73,15 @@ class RedisConnection extends Connection
     {
         try {
             $this->client = call_user_func($this->connector, $this->config);
-            return true;
+
+            if (!empty($this->client)) {
+                if ($this->client instanceof Redis) {
+                    return true;
+                }
+            }
+
+            throw new RedisException("Get Redis Client Error.");
+
         } catch (RedisException $e) {
             return false;
         }

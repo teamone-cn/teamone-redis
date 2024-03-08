@@ -11,5 +11,4 @@ interface Connector
      * @return Connection
      */
     public function connect(array $config) : Connection;
-
 }
