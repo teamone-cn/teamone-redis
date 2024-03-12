@@ -1,11 +1,13 @@
 <?php
+namespace Teamone\RedisTest;
 
-namespace Teamone\Redis;
-
+use Teamone\Redis\Connector;
 use Redis;
+use Teamone\Redis\RedisConnection;
+use Teamone\Redis\Connection;
 use RedisException;
 
-class RedisConnector implements Connector
+class CustomRedisConnector implements Connector
 {
     /**
      * @desc 创建新的连接

@@ -6,7 +6,7 @@
     "autoload": {
         "psr-4": {
             "Teamone\\Redis\\": "src/",
-            "Teamone\\RedisTest\\": "tests/"
+            "Teamone\\RedisTest\\": "test/"
         }
     },
     "authors": [

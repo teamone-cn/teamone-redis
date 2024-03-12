@@ -92,9 +92,15 @@ $manager = new RedisManager($configs);
 /** @var Redis $redis */
 $redis = $manager->connection($name);
 
-$result = $redis->set("name", "hajar");
+$result = $redis->set("name", "Teamone");
 var_dump($result);
 
 ```
+
+### 三、执行单元测试
+
+````shell
+./vendor/bin/phpunit ./test/RedisTest.php --filter testConnect
+````
 
 
